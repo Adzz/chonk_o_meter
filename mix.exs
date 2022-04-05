@@ -24,7 +24,7 @@ defmodule ChonkOMeter.MixProject do
   end
 
   defp copy_pictures(_) do
-    File.cp_r(Path.expand("./images/"), Path.expand("./images/doc/"))
+    File.cp_r(Path.expand("./images/"), Path.expand("./doc/images/"))
   end
 
   # Run "mix help deps" to learn about dependencies.
