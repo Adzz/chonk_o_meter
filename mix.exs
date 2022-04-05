@@ -6,6 +6,7 @@ defmodule ChonkOMeter.MixProject do
       app: :chonk_o_meter,
       version: "0.1.0",
       elixir: "~> 1.12",
+      aliases: aliases(),
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -18,10 +19,18 @@ defmodule ChonkOMeter.MixProject do
     ]
   end
 
+  defp aliases() do
+    [docs: ["docs", &copy_pictures/1]]
+  end
+
+  defp copy_pictures(_) do
+    File.cp_r(Path.expand("./images/"), Path.expand("./images/doc/"))
+  end
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
+      {:ex_doc, ">=0.0.0", runtime: false},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
   end
