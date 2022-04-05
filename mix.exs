@@ -20,18 +20,22 @@ defmodule ChonkOMeter.MixProject do
   end
 
   defp aliases() do
-    [docs: ["docs", &copy_pictures/1]]
+    [docs: ["docs", &copy_pictures/1, &create_livebook/1]]
   end
 
   defp copy_pictures(_) do
     File.cp_r(Path.expand("./images/"), Path.expand("./doc/images/"))
   end
 
+  defp create_livebook(_) do
+    Mix.Task.run("create_livebook_from_module", ["ChonkOMeter", "chonk_o_meter_livebook"])
+  end
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_doc, ">=0.0.0", runtime: false},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:ex_doc, ">=0.0.0", runtime: false, only: [:docs, :dev]},
+      {:livebook_helpers, ">=0.0.0", only: [:docs, :dev]},
     ]
   end
 end

@@ -1,13 +1,18 @@
 # ChonkOMeter
+
+This library was used as an example of how to create livebook documentation. It accompanies [this blog post]().
+
 <!-- README START -->
 Chonk O Meter is a state of the art size estimator. It will rate the size of anything according to the following chart:
 
 ![alt chart showing cats of various sizes](./images/chonk.jpg)
 
-```elixir
+For example:
+
+
     iex> ChonkOMeter.story_points(10)
     "Mega Chonk"
-```
+
 <!-- README END -->
 
 ## Installation
