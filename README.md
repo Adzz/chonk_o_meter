@@ -15,6 +15,21 @@ For example:
 
 <!-- README END -->
 
+## Generating Docs
+
+Generate with:
+
+```sh
+mix docs
+```
+
+## Publish
+
+```sh
+mix hex.publish
+```
+
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
