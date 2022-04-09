@@ -35,7 +35,7 @@ defmodule ChonkOMeter.MixProject do
   defp deps do
     [
       {:ex_doc, ">=0.0.0", runtime: false, only: [:docs, :dev]},
-      {:livebook_helpers, ">=0.0.0", only: [:docs, :dev]},
+      {:livebook_helpers, ">=0.0.0", only: [:docs, :dev]}
     ]
   end
 end
